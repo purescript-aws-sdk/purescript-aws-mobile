@@ -20,52 +20,68 @@ import Data.StrMap as StrMap
 import AWS.Request as Request
 import AWS.Request.Types as Types
 
-serviceName = "Mobile" :: String
-
 
 -- | <p> Creates an AWS Mobile Hub project. </p>
 createProject :: forall eff. CreateProjectRequest -> Aff (exception :: EXCEPTION | eff) CreateProjectResult
-createProject = Request.request serviceName "createProject" 
+createProject = Request.request service method  where
+    service = Request.ServiceName "Mobile"
+    method = Request.MethodName "createProject"
 
 
 -- | <p> Delets a project in AWS Mobile Hub. </p>
 deleteProject :: forall eff. DeleteProjectRequest -> Aff (exception :: EXCEPTION | eff) DeleteProjectResult
-deleteProject = Request.request serviceName "deleteProject" 
+deleteProject = Request.request service method  where
+    service = Request.ServiceName "Mobile"
+    method = Request.MethodName "deleteProject"
 
 
 -- | <p> Get the bundle details for the requested bundle id. </p>
 describeBundle :: forall eff. DescribeBundleRequest -> Aff (exception :: EXCEPTION | eff) DescribeBundleResult
-describeBundle = Request.request serviceName "describeBundle" 
+describeBundle = Request.request service method  where
+    service = Request.ServiceName "Mobile"
+    method = Request.MethodName "describeBundle"
 
 
 -- | <p> Gets details about a project in AWS Mobile Hub. </p>
 describeProject :: forall eff. DescribeProjectRequest -> Aff (exception :: EXCEPTION | eff) DescribeProjectResult
-describeProject = Request.request serviceName "describeProject" 
+describeProject = Request.request service method  where
+    service = Request.ServiceName "Mobile"
+    method = Request.MethodName "describeProject"
 
 
 -- | <p> Generates customized software development kit (SDK) and or tool packages used to integrate mobile web or mobile app clients with backend AWS resources. </p>
 exportBundle :: forall eff. ExportBundleRequest -> Aff (exception :: EXCEPTION | eff) ExportBundleResult
-exportBundle = Request.request serviceName "exportBundle" 
+exportBundle = Request.request service method  where
+    service = Request.ServiceName "Mobile"
+    method = Request.MethodName "exportBundle"
 
 
 -- | <p> Exports project configuration to a snapshot which can be downloaded and shared. Note that mobile app push credentials are encrypted in exported projects, so they can only be shared successfully within the same AWS account. </p>
 exportProject :: forall eff. ExportProjectRequest -> Aff (exception :: EXCEPTION | eff) ExportProjectResult
-exportProject = Request.request serviceName "exportProject" 
+exportProject = Request.request service method  where
+    service = Request.ServiceName "Mobile"
+    method = Request.MethodName "exportProject"
 
 
 -- | <p> List all available bundles. </p>
 listBundles :: forall eff. ListBundlesRequest -> Aff (exception :: EXCEPTION | eff) ListBundlesResult
-listBundles = Request.request serviceName "listBundles" 
+listBundles = Request.request service method  where
+    service = Request.ServiceName "Mobile"
+    method = Request.MethodName "listBundles"
 
 
 -- | <p> Lists projects in AWS Mobile Hub. </p>
 listProjects :: forall eff. ListProjectsRequest -> Aff (exception :: EXCEPTION | eff) ListProjectsResult
-listProjects = Request.request serviceName "listProjects" 
+listProjects = Request.request service method  where
+    service = Request.ServiceName "Mobile"
+    method = Request.MethodName "listProjects"
 
 
 -- | <p> Update an existing project. </p>
 updateProject :: forall eff. UpdateProjectRequest -> Aff (exception :: EXCEPTION | eff) UpdateProjectResult
-updateProject = Request.request serviceName "updateProject" 
+updateProject = Request.request service method  where
+    service = Request.ServiceName "Mobile"
+    method = Request.MethodName "updateProject"
 
 
 -- | <p> Account Action is required in order to continue the request. </p>
