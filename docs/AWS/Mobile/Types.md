@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype AccountActionRequiredException
-  = AccountActionRequiredException { message :: NullOrUndefined (ErrorMessage) }
+  = AccountActionRequiredException { message :: Maybe (ErrorMessage) }
 ```
 
 <p> Account Action is required in order to continue the request. </p>
@@ -35,7 +35,7 @@ Constructs AccountActionRequiredException from required parameters
 #### `newAccountActionRequiredException'`
 
 ``` purescript
-newAccountActionRequiredException' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> AccountActionRequiredException
+newAccountActionRequiredException' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> AccountActionRequiredException
 ```
 
 Constructs AccountActionRequiredException's fields from required parameters
@@ -98,7 +98,7 @@ Encode Attributes
 
 ``` purescript
 newtype BadRequestException
-  = BadRequestException { message :: NullOrUndefined (ErrorMessage) }
+  = BadRequestException { message :: Maybe (ErrorMessage) }
 ```
 
 <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
@@ -123,7 +123,7 @@ Constructs BadRequestException from required parameters
 #### `newBadRequestException'`
 
 ``` purescript
-newBadRequestException' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> BadRequestException
+newBadRequestException' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> BadRequestException
 ```
 
 Constructs BadRequestException's fields from required parameters
@@ -150,7 +150,7 @@ Encode BundleDescription
 
 ``` purescript
 newtype BundleDetails
-  = BundleDetails { bundleId :: NullOrUndefined (BundleId), title :: NullOrUndefined (BundleTitle), version :: NullOrUndefined (BundleVersion), description :: NullOrUndefined (BundleDescription), iconUrl :: NullOrUndefined (IconUrl), availablePlatforms :: NullOrUndefined (Platforms) }
+  = BundleDetails { bundleId :: Maybe (BundleId), title :: Maybe (BundleTitle), version :: Maybe (BundleVersion), description :: Maybe (BundleDescription), iconUrl :: Maybe (IconUrl), availablePlatforms :: Maybe (Platforms) }
 ```
 
 <p> The details of the bundle. </p>
@@ -175,7 +175,7 @@ Constructs BundleDetails from required parameters
 #### `newBundleDetails'`
 
 ``` purescript
-newBundleDetails' :: ({ bundleId :: NullOrUndefined (BundleId), title :: NullOrUndefined (BundleTitle), version :: NullOrUndefined (BundleVersion), description :: NullOrUndefined (BundleDescription), iconUrl :: NullOrUndefined (IconUrl), availablePlatforms :: NullOrUndefined (Platforms) } -> { bundleId :: NullOrUndefined (BundleId), title :: NullOrUndefined (BundleTitle), version :: NullOrUndefined (BundleVersion), description :: NullOrUndefined (BundleDescription), iconUrl :: NullOrUndefined (IconUrl), availablePlatforms :: NullOrUndefined (Platforms) }) -> BundleDetails
+newBundleDetails' :: ({ bundleId :: Maybe (BundleId), title :: Maybe (BundleTitle), version :: Maybe (BundleVersion), description :: Maybe (BundleDescription), iconUrl :: Maybe (IconUrl), availablePlatforms :: Maybe (Platforms) } -> { bundleId :: Maybe (BundleId), title :: Maybe (BundleTitle), version :: Maybe (BundleVersion), description :: Maybe (BundleDescription), iconUrl :: Maybe (IconUrl), availablePlatforms :: Maybe (Platforms) }) -> BundleDetails
 ```
 
 Constructs BundleDetails's fields from required parameters
@@ -290,7 +290,7 @@ Encode Contents
 
 ``` purescript
 newtype CreateProjectRequest
-  = CreateProjectRequest { name :: NullOrUndefined (ProjectName), region :: NullOrUndefined (ProjectRegion), contents :: NullOrUndefined (Contents), snapshotId :: NullOrUndefined (SnapshotId) }
+  = CreateProjectRequest { name :: Maybe (ProjectName), region :: Maybe (ProjectRegion), contents :: Maybe (Contents), snapshotId :: Maybe (SnapshotId) }
 ```
 
 <p> Request structure used to request a project be created. </p>
@@ -315,7 +315,7 @@ Constructs CreateProjectRequest from required parameters
 #### `newCreateProjectRequest'`
 
 ``` purescript
-newCreateProjectRequest' :: ({ name :: NullOrUndefined (ProjectName), region :: NullOrUndefined (ProjectRegion), contents :: NullOrUndefined (Contents), snapshotId :: NullOrUndefined (SnapshotId) } -> { name :: NullOrUndefined (ProjectName), region :: NullOrUndefined (ProjectRegion), contents :: NullOrUndefined (Contents), snapshotId :: NullOrUndefined (SnapshotId) }) -> CreateProjectRequest
+newCreateProjectRequest' :: ({ name :: Maybe (ProjectName), region :: Maybe (ProjectRegion), contents :: Maybe (Contents), snapshotId :: Maybe (SnapshotId) } -> { name :: Maybe (ProjectName), region :: Maybe (ProjectRegion), contents :: Maybe (Contents), snapshotId :: Maybe (SnapshotId) }) -> CreateProjectRequest
 ```
 
 Constructs CreateProjectRequest's fields from required parameters
@@ -324,7 +324,7 @@ Constructs CreateProjectRequest's fields from required parameters
 
 ``` purescript
 newtype CreateProjectResult
-  = CreateProjectResult { details :: NullOrUndefined (ProjectDetails) }
+  = CreateProjectResult { details :: Maybe (ProjectDetails) }
 ```
 
 <p> Result structure used in response to a request to create a project. </p>
@@ -349,7 +349,7 @@ Constructs CreateProjectResult from required parameters
 #### `newCreateProjectResult'`
 
 ``` purescript
-newCreateProjectResult' :: ({ details :: NullOrUndefined (ProjectDetails) } -> { details :: NullOrUndefined (ProjectDetails) }) -> CreateProjectResult
+newCreateProjectResult' :: ({ details :: Maybe (ProjectDetails) } -> { details :: Maybe (ProjectDetails) }) -> CreateProjectResult
 ```
 
 Constructs CreateProjectResult's fields from required parameters
@@ -408,7 +408,7 @@ Constructs DeleteProjectRequest's fields from required parameters
 
 ``` purescript
 newtype DeleteProjectResult
-  = DeleteProjectResult { deletedResources :: NullOrUndefined (Resources), orphanedResources :: NullOrUndefined (Resources) }
+  = DeleteProjectResult { deletedResources :: Maybe (Resources), orphanedResources :: Maybe (Resources) }
 ```
 
 <p> Result structure used in response to request to delete a project. </p>
@@ -433,7 +433,7 @@ Constructs DeleteProjectResult from required parameters
 #### `newDeleteProjectResult'`
 
 ``` purescript
-newDeleteProjectResult' :: ({ deletedResources :: NullOrUndefined (Resources), orphanedResources :: NullOrUndefined (Resources) } -> { deletedResources :: NullOrUndefined (Resources), orphanedResources :: NullOrUndefined (Resources) }) -> DeleteProjectResult
+newDeleteProjectResult' :: ({ deletedResources :: Maybe (Resources), orphanedResources :: Maybe (Resources) } -> { deletedResources :: Maybe (Resources), orphanedResources :: Maybe (Resources) }) -> DeleteProjectResult
 ```
 
 Constructs DeleteProjectResult's fields from required parameters
@@ -476,7 +476,7 @@ Constructs DescribeBundleRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeBundleResult
-  = DescribeBundleResult { details :: NullOrUndefined (BundleDetails) }
+  = DescribeBundleResult { details :: Maybe (BundleDetails) }
 ```
 
 <p> Result structure contains the details of the bundle. </p>
@@ -501,7 +501,7 @@ Constructs DescribeBundleResult from required parameters
 #### `newDescribeBundleResult'`
 
 ``` purescript
-newDescribeBundleResult' :: ({ details :: NullOrUndefined (BundleDetails) } -> { details :: NullOrUndefined (BundleDetails) }) -> DescribeBundleResult
+newDescribeBundleResult' :: ({ details :: Maybe (BundleDetails) } -> { details :: Maybe (BundleDetails) }) -> DescribeBundleResult
 ```
 
 Constructs DescribeBundleResult's fields from required parameters
@@ -510,7 +510,7 @@ Constructs DescribeBundleResult's fields from required parameters
 
 ``` purescript
 newtype DescribeProjectRequest
-  = DescribeProjectRequest { projectId :: ProjectId, syncFromResources :: NullOrUndefined (Boolean) }
+  = DescribeProjectRequest { projectId :: ProjectId, syncFromResources :: Maybe (Boolean) }
 ```
 
 <p> Request structure used to request details about a project. </p>
@@ -535,7 +535,7 @@ Constructs DescribeProjectRequest from required parameters
 #### `newDescribeProjectRequest'`
 
 ``` purescript
-newDescribeProjectRequest' :: ProjectId -> ({ projectId :: ProjectId, syncFromResources :: NullOrUndefined (Boolean) } -> { projectId :: ProjectId, syncFromResources :: NullOrUndefined (Boolean) }) -> DescribeProjectRequest
+newDescribeProjectRequest' :: ProjectId -> ({ projectId :: ProjectId, syncFromResources :: Maybe (Boolean) } -> { projectId :: ProjectId, syncFromResources :: Maybe (Boolean) }) -> DescribeProjectRequest
 ```
 
 Constructs DescribeProjectRequest's fields from required parameters
@@ -544,7 +544,7 @@ Constructs DescribeProjectRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeProjectResult
-  = DescribeProjectResult { details :: NullOrUndefined (ProjectDetails) }
+  = DescribeProjectResult { details :: Maybe (ProjectDetails) }
 ```
 
 <p> Result structure used for requests of project details. </p>
@@ -569,7 +569,7 @@ Constructs DescribeProjectResult from required parameters
 #### `newDescribeProjectResult'`
 
 ``` purescript
-newDescribeProjectResult' :: ({ details :: NullOrUndefined (ProjectDetails) } -> { details :: NullOrUndefined (ProjectDetails) }) -> DescribeProjectResult
+newDescribeProjectResult' :: ({ details :: Maybe (ProjectDetails) } -> { details :: Maybe (ProjectDetails) }) -> DescribeProjectResult
 ```
 
 Constructs DescribeProjectResult's fields from required parameters
@@ -614,7 +614,7 @@ Encode ErrorMessage
 
 ``` purescript
 newtype ExportBundleRequest
-  = ExportBundleRequest { bundleId :: BundleId, projectId :: NullOrUndefined (ProjectId), platform :: NullOrUndefined (Platform) }
+  = ExportBundleRequest { bundleId :: BundleId, projectId :: Maybe (ProjectId), platform :: Maybe (Platform) }
 ```
 
 <p> Request structure used to request generation of custom SDK and tool packages required to integrate mobile web or app clients with backed AWS resources. </p>
@@ -639,7 +639,7 @@ Constructs ExportBundleRequest from required parameters
 #### `newExportBundleRequest'`
 
 ``` purescript
-newExportBundleRequest' :: BundleId -> ({ bundleId :: BundleId, projectId :: NullOrUndefined (ProjectId), platform :: NullOrUndefined (Platform) } -> { bundleId :: BundleId, projectId :: NullOrUndefined (ProjectId), platform :: NullOrUndefined (Platform) }) -> ExportBundleRequest
+newExportBundleRequest' :: BundleId -> ({ bundleId :: BundleId, projectId :: Maybe (ProjectId), platform :: Maybe (Platform) } -> { bundleId :: BundleId, projectId :: Maybe (ProjectId), platform :: Maybe (Platform) }) -> ExportBundleRequest
 ```
 
 Constructs ExportBundleRequest's fields from required parameters
@@ -648,7 +648,7 @@ Constructs ExportBundleRequest's fields from required parameters
 
 ``` purescript
 newtype ExportBundleResult
-  = ExportBundleResult { downloadUrl :: NullOrUndefined (DownloadUrl) }
+  = ExportBundleResult { downloadUrl :: Maybe (DownloadUrl) }
 ```
 
 <p> Result structure which contains link to download custom-generated SDK and tool packages used to integrate mobile web or app clients with backed AWS resources. </p>
@@ -673,7 +673,7 @@ Constructs ExportBundleResult from required parameters
 #### `newExportBundleResult'`
 
 ``` purescript
-newExportBundleResult' :: ({ downloadUrl :: NullOrUndefined (DownloadUrl) } -> { downloadUrl :: NullOrUndefined (DownloadUrl) }) -> ExportBundleResult
+newExportBundleResult' :: ({ downloadUrl :: Maybe (DownloadUrl) } -> { downloadUrl :: Maybe (DownloadUrl) }) -> ExportBundleResult
 ```
 
 Constructs ExportBundleResult's fields from required parameters
@@ -716,7 +716,7 @@ Constructs ExportProjectRequest's fields from required parameters
 
 ``` purescript
 newtype ExportProjectResult
-  = ExportProjectResult { downloadUrl :: NullOrUndefined (DownloadUrl), shareUrl :: NullOrUndefined (ShareUrl), snapshotId :: NullOrUndefined (SnapshotId) }
+  = ExportProjectResult { downloadUrl :: Maybe (DownloadUrl), shareUrl :: Maybe (ShareUrl), snapshotId :: Maybe (SnapshotId) }
 ```
 
 <p> Result structure used for requests to export project configuration details. </p>
@@ -741,7 +741,7 @@ Constructs ExportProjectResult from required parameters
 #### `newExportProjectResult'`
 
 ``` purescript
-newExportProjectResult' :: ({ downloadUrl :: NullOrUndefined (DownloadUrl), shareUrl :: NullOrUndefined (ShareUrl), snapshotId :: NullOrUndefined (SnapshotId) } -> { downloadUrl :: NullOrUndefined (DownloadUrl), shareUrl :: NullOrUndefined (ShareUrl), snapshotId :: NullOrUndefined (SnapshotId) }) -> ExportProjectResult
+newExportProjectResult' :: ({ downloadUrl :: Maybe (DownloadUrl), shareUrl :: Maybe (ShareUrl), snapshotId :: Maybe (SnapshotId) } -> { downloadUrl :: Maybe (DownloadUrl), shareUrl :: Maybe (ShareUrl), snapshotId :: Maybe (SnapshotId) }) -> ExportProjectResult
 ```
 
 Constructs ExportProjectResult's fields from required parameters
@@ -786,7 +786,7 @@ Encode IconUrl
 
 ``` purescript
 newtype InternalFailureException
-  = InternalFailureException { message :: NullOrUndefined (ErrorMessage) }
+  = InternalFailureException { message :: Maybe (ErrorMessage) }
 ```
 
 <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
@@ -811,7 +811,7 @@ Constructs InternalFailureException from required parameters
 #### `newInternalFailureException'`
 
 ``` purescript
-newInternalFailureException' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> InternalFailureException
+newInternalFailureException' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> InternalFailureException
 ```
 
 Constructs InternalFailureException's fields from required parameters
@@ -820,7 +820,7 @@ Constructs InternalFailureException's fields from required parameters
 
 ``` purescript
 newtype LimitExceededException
-  = LimitExceededException { retryAfterSeconds :: NullOrUndefined (ErrorMessage), message :: NullOrUndefined (ErrorMessage) }
+  = LimitExceededException { retryAfterSeconds :: Maybe (ErrorMessage), message :: Maybe (ErrorMessage) }
 ```
 
 <p> There are too many AWS Mobile Hub projects in the account or the account has exceeded the maximum number of resources in some AWS service. You should create another sub-account using AWS Organizations or remove some resources and retry your request. </p>
@@ -845,7 +845,7 @@ Constructs LimitExceededException from required parameters
 #### `newLimitExceededException'`
 
 ``` purescript
-newLimitExceededException' :: ({ retryAfterSeconds :: NullOrUndefined (ErrorMessage), message :: NullOrUndefined (ErrorMessage) } -> { retryAfterSeconds :: NullOrUndefined (ErrorMessage), message :: NullOrUndefined (ErrorMessage) }) -> LimitExceededException
+newLimitExceededException' :: ({ retryAfterSeconds :: Maybe (ErrorMessage), message :: Maybe (ErrorMessage) } -> { retryAfterSeconds :: Maybe (ErrorMessage), message :: Maybe (ErrorMessage) }) -> LimitExceededException
 ```
 
 Constructs LimitExceededException's fields from required parameters
@@ -854,7 +854,7 @@ Constructs LimitExceededException's fields from required parameters
 
 ``` purescript
 newtype ListBundlesRequest
-  = ListBundlesRequest { maxResults :: NullOrUndefined (MaxResults), nextToken :: NullOrUndefined (NextToken) }
+  = ListBundlesRequest { maxResults :: Maybe (MaxResults), nextToken :: Maybe (NextToken) }
 ```
 
 <p> Request structure to request all available bundles. </p>
@@ -879,7 +879,7 @@ Constructs ListBundlesRequest from required parameters
 #### `newListBundlesRequest'`
 
 ``` purescript
-newListBundlesRequest' :: ({ maxResults :: NullOrUndefined (MaxResults), nextToken :: NullOrUndefined (NextToken) } -> { maxResults :: NullOrUndefined (MaxResults), nextToken :: NullOrUndefined (NextToken) }) -> ListBundlesRequest
+newListBundlesRequest' :: ({ maxResults :: Maybe (MaxResults), nextToken :: Maybe (NextToken) } -> { maxResults :: Maybe (MaxResults), nextToken :: Maybe (NextToken) }) -> ListBundlesRequest
 ```
 
 Constructs ListBundlesRequest's fields from required parameters
@@ -888,7 +888,7 @@ Constructs ListBundlesRequest's fields from required parameters
 
 ``` purescript
 newtype ListBundlesResult
-  = ListBundlesResult { bundleList :: NullOrUndefined (BundleList), nextToken :: NullOrUndefined (NextToken) }
+  = ListBundlesResult { bundleList :: Maybe (BundleList), nextToken :: Maybe (NextToken) }
 ```
 
 <p> Result structure contains a list of all available bundles with details. </p>
@@ -913,7 +913,7 @@ Constructs ListBundlesResult from required parameters
 #### `newListBundlesResult'`
 
 ``` purescript
-newListBundlesResult' :: ({ bundleList :: NullOrUndefined (BundleList), nextToken :: NullOrUndefined (NextToken) } -> { bundleList :: NullOrUndefined (BundleList), nextToken :: NullOrUndefined (NextToken) }) -> ListBundlesResult
+newListBundlesResult' :: ({ bundleList :: Maybe (BundleList), nextToken :: Maybe (NextToken) } -> { bundleList :: Maybe (BundleList), nextToken :: Maybe (NextToken) }) -> ListBundlesResult
 ```
 
 Constructs ListBundlesResult's fields from required parameters
@@ -922,7 +922,7 @@ Constructs ListBundlesResult's fields from required parameters
 
 ``` purescript
 newtype ListProjectsRequest
-  = ListProjectsRequest { maxResults :: NullOrUndefined (MaxResults), nextToken :: NullOrUndefined (NextToken) }
+  = ListProjectsRequest { maxResults :: Maybe (MaxResults), nextToken :: Maybe (NextToken) }
 ```
 
 <p> Request structure used to request projects list in AWS Mobile Hub. </p>
@@ -947,7 +947,7 @@ Constructs ListProjectsRequest from required parameters
 #### `newListProjectsRequest'`
 
 ``` purescript
-newListProjectsRequest' :: ({ maxResults :: NullOrUndefined (MaxResults), nextToken :: NullOrUndefined (NextToken) } -> { maxResults :: NullOrUndefined (MaxResults), nextToken :: NullOrUndefined (NextToken) }) -> ListProjectsRequest
+newListProjectsRequest' :: ({ maxResults :: Maybe (MaxResults), nextToken :: Maybe (NextToken) } -> { maxResults :: Maybe (MaxResults), nextToken :: Maybe (NextToken) }) -> ListProjectsRequest
 ```
 
 Constructs ListProjectsRequest's fields from required parameters
@@ -956,7 +956,7 @@ Constructs ListProjectsRequest's fields from required parameters
 
 ``` purescript
 newtype ListProjectsResult
-  = ListProjectsResult { projects :: NullOrUndefined (ProjectSummaries), nextToken :: NullOrUndefined (NextToken) }
+  = ListProjectsResult { projects :: Maybe (ProjectSummaries), nextToken :: Maybe (NextToken) }
 ```
 
 <p> Result structure used for requests to list projects in AWS Mobile Hub. </p>
@@ -981,7 +981,7 @@ Constructs ListProjectsResult from required parameters
 #### `newListProjectsResult'`
 
 ``` purescript
-newListProjectsResult' :: ({ projects :: NullOrUndefined (ProjectSummaries), nextToken :: NullOrUndefined (NextToken) } -> { projects :: NullOrUndefined (ProjectSummaries), nextToken :: NullOrUndefined (NextToken) }) -> ListProjectsResult
+newListProjectsResult' :: ({ projects :: Maybe (ProjectSummaries), nextToken :: Maybe (NextToken) } -> { projects :: Maybe (ProjectSummaries), nextToken :: Maybe (NextToken) }) -> ListProjectsResult
 ```
 
 Constructs ListProjectsResult's fields from required parameters
@@ -1026,7 +1026,7 @@ Encode NextToken
 
 ``` purescript
 newtype NotFoundException
-  = NotFoundException { message :: NullOrUndefined (ErrorMessage) }
+  = NotFoundException { message :: Maybe (ErrorMessage) }
 ```
 
 <p> No entity can be found with the specified identifier. </p>
@@ -1051,7 +1051,7 @@ Constructs NotFoundException from required parameters
 #### `newNotFoundException'`
 
 ``` purescript
-newNotFoundException' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> NotFoundException
+newNotFoundException' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> NotFoundException
 ```
 
 Constructs NotFoundException's fields from required parameters
@@ -1096,7 +1096,7 @@ Encode Platforms
 
 ``` purescript
 newtype ProjectDetails
-  = ProjectDetails { name :: NullOrUndefined (ProjectName), projectId :: NullOrUndefined (ProjectId), region :: NullOrUndefined (ProjectRegion), state :: NullOrUndefined (ProjectState), createdDate :: NullOrUndefined (Date), lastUpdatedDate :: NullOrUndefined (Date), consoleUrl :: NullOrUndefined (ConsoleUrl), resources :: NullOrUndefined (Resources) }
+  = ProjectDetails { name :: Maybe (ProjectName), projectId :: Maybe (ProjectId), region :: Maybe (ProjectRegion), state :: Maybe (ProjectState), createdDate :: Maybe (Date), lastUpdatedDate :: Maybe (Date), consoleUrl :: Maybe (ConsoleUrl), resources :: Maybe (Resources) }
 ```
 
 <p> Detailed information about an AWS Mobile Hub project. </p>
@@ -1121,7 +1121,7 @@ Constructs ProjectDetails from required parameters
 #### `newProjectDetails'`
 
 ``` purescript
-newProjectDetails' :: ({ name :: NullOrUndefined (ProjectName), projectId :: NullOrUndefined (ProjectId), region :: NullOrUndefined (ProjectRegion), state :: NullOrUndefined (ProjectState), createdDate :: NullOrUndefined (Date), lastUpdatedDate :: NullOrUndefined (Date), consoleUrl :: NullOrUndefined (ConsoleUrl), resources :: NullOrUndefined (Resources) } -> { name :: NullOrUndefined (ProjectName), projectId :: NullOrUndefined (ProjectId), region :: NullOrUndefined (ProjectRegion), state :: NullOrUndefined (ProjectState), createdDate :: NullOrUndefined (Date), lastUpdatedDate :: NullOrUndefined (Date), consoleUrl :: NullOrUndefined (ConsoleUrl), resources :: NullOrUndefined (Resources) }) -> ProjectDetails
+newProjectDetails' :: ({ name :: Maybe (ProjectName), projectId :: Maybe (ProjectId), region :: Maybe (ProjectRegion), state :: Maybe (ProjectState), createdDate :: Maybe (Date), lastUpdatedDate :: Maybe (Date), consoleUrl :: Maybe (ConsoleUrl), resources :: Maybe (Resources) } -> { name :: Maybe (ProjectName), projectId :: Maybe (ProjectId), region :: Maybe (ProjectRegion), state :: Maybe (ProjectState), createdDate :: Maybe (Date), lastUpdatedDate :: Maybe (Date), consoleUrl :: Maybe (ConsoleUrl), resources :: Maybe (Resources) }) -> ProjectDetails
 ```
 
 Constructs ProjectDetails's fields from required parameters
@@ -1220,7 +1220,7 @@ Encode ProjectSummaries
 
 ``` purescript
 newtype ProjectSummary
-  = ProjectSummary { name :: NullOrUndefined (ProjectName), projectId :: NullOrUndefined (ProjectId) }
+  = ProjectSummary { name :: Maybe (ProjectName), projectId :: Maybe (ProjectId) }
 ```
 
 <p> Summary information about an AWS Mobile Hub project. </p>
@@ -1245,7 +1245,7 @@ Constructs ProjectSummary from required parameters
 #### `newProjectSummary'`
 
 ``` purescript
-newProjectSummary' :: ({ name :: NullOrUndefined (ProjectName), projectId :: NullOrUndefined (ProjectId) } -> { name :: NullOrUndefined (ProjectName), projectId :: NullOrUndefined (ProjectId) }) -> ProjectSummary
+newProjectSummary' :: ({ name :: Maybe (ProjectName), projectId :: Maybe (ProjectId) } -> { name :: Maybe (ProjectName), projectId :: Maybe (ProjectId) }) -> ProjectSummary
 ```
 
 Constructs ProjectSummary's fields from required parameters
@@ -1254,7 +1254,7 @@ Constructs ProjectSummary's fields from required parameters
 
 ``` purescript
 newtype Resource
-  = Resource { "type" :: NullOrUndefined (ResourceType), name :: NullOrUndefined (ResourceName), arn :: NullOrUndefined (ResourceArn), feature :: NullOrUndefined (Feature), attributes :: NullOrUndefined (Attributes) }
+  = Resource { "type" :: Maybe (ResourceType), name :: Maybe (ResourceName), arn :: Maybe (ResourceArn), feature :: Maybe (Feature), attributes :: Maybe (Attributes) }
 ```
 
 <p> Information about an instance of an AWS resource associated with a project. </p>
@@ -1279,7 +1279,7 @@ Constructs Resource from required parameters
 #### `newResource'`
 
 ``` purescript
-newResource' :: ({ "type" :: NullOrUndefined (ResourceType), name :: NullOrUndefined (ResourceName), arn :: NullOrUndefined (ResourceArn), feature :: NullOrUndefined (Feature), attributes :: NullOrUndefined (Attributes) } -> { "type" :: NullOrUndefined (ResourceType), name :: NullOrUndefined (ResourceName), arn :: NullOrUndefined (ResourceArn), feature :: NullOrUndefined (Feature), attributes :: NullOrUndefined (Attributes) }) -> Resource
+newResource' :: ({ "type" :: Maybe (ResourceType), name :: Maybe (ResourceName), arn :: Maybe (ResourceArn), feature :: Maybe (Feature), attributes :: Maybe (Attributes) } -> { "type" :: Maybe (ResourceType), name :: Maybe (ResourceName), arn :: Maybe (ResourceArn), feature :: Maybe (Feature), attributes :: Maybe (Attributes) }) -> Resource
 ```
 
 Constructs Resource's fields from required parameters
@@ -1360,7 +1360,7 @@ Encode Resources
 
 ``` purescript
 newtype ServiceUnavailableException
-  = ServiceUnavailableException { retryAfterSeconds :: NullOrUndefined (ErrorMessage), message :: NullOrUndefined (ErrorMessage) }
+  = ServiceUnavailableException { retryAfterSeconds :: Maybe (ErrorMessage), message :: Maybe (ErrorMessage) }
 ```
 
 <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
@@ -1385,7 +1385,7 @@ Constructs ServiceUnavailableException from required parameters
 #### `newServiceUnavailableException'`
 
 ``` purescript
-newServiceUnavailableException' :: ({ retryAfterSeconds :: NullOrUndefined (ErrorMessage), message :: NullOrUndefined (ErrorMessage) } -> { retryAfterSeconds :: NullOrUndefined (ErrorMessage), message :: NullOrUndefined (ErrorMessage) }) -> ServiceUnavailableException
+newServiceUnavailableException' :: ({ retryAfterSeconds :: Maybe (ErrorMessage), message :: Maybe (ErrorMessage) } -> { retryAfterSeconds :: Maybe (ErrorMessage), message :: Maybe (ErrorMessage) }) -> ServiceUnavailableException
 ```
 
 Constructs ServiceUnavailableException's fields from required parameters
@@ -1430,7 +1430,7 @@ Encode SnapshotId
 
 ``` purescript
 newtype TooManyRequestsException
-  = TooManyRequestsException { retryAfterSeconds :: NullOrUndefined (ErrorMessage), message :: NullOrUndefined (ErrorMessage) }
+  = TooManyRequestsException { retryAfterSeconds :: Maybe (ErrorMessage), message :: Maybe (ErrorMessage) }
 ```
 
 <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
@@ -1455,7 +1455,7 @@ Constructs TooManyRequestsException from required parameters
 #### `newTooManyRequestsException'`
 
 ``` purescript
-newTooManyRequestsException' :: ({ retryAfterSeconds :: NullOrUndefined (ErrorMessage), message :: NullOrUndefined (ErrorMessage) } -> { retryAfterSeconds :: NullOrUndefined (ErrorMessage), message :: NullOrUndefined (ErrorMessage) }) -> TooManyRequestsException
+newTooManyRequestsException' :: ({ retryAfterSeconds :: Maybe (ErrorMessage), message :: Maybe (ErrorMessage) } -> { retryAfterSeconds :: Maybe (ErrorMessage), message :: Maybe (ErrorMessage) }) -> TooManyRequestsException
 ```
 
 Constructs TooManyRequestsException's fields from required parameters
@@ -1464,7 +1464,7 @@ Constructs TooManyRequestsException's fields from required parameters
 
 ``` purescript
 newtype UnauthorizedException
-  = UnauthorizedException { message :: NullOrUndefined (ErrorMessage) }
+  = UnauthorizedException { message :: Maybe (ErrorMessage) }
 ```
 
 <p> Credentials of the caller are insufficient to authorize the request. </p>
@@ -1489,7 +1489,7 @@ Constructs UnauthorizedException from required parameters
 #### `newUnauthorizedException'`
 
 ``` purescript
-newUnauthorizedException' :: ({ message :: NullOrUndefined (ErrorMessage) } -> { message :: NullOrUndefined (ErrorMessage) }) -> UnauthorizedException
+newUnauthorizedException' :: ({ message :: Maybe (ErrorMessage) } -> { message :: Maybe (ErrorMessage) }) -> UnauthorizedException
 ```
 
 Constructs UnauthorizedException's fields from required parameters
@@ -1498,7 +1498,7 @@ Constructs UnauthorizedException's fields from required parameters
 
 ``` purescript
 newtype UpdateProjectRequest
-  = UpdateProjectRequest { contents :: NullOrUndefined (Contents), projectId :: ProjectId }
+  = UpdateProjectRequest { contents :: Maybe (Contents), projectId :: ProjectId }
 ```
 
 <p> Request structure used for requests to update project configuration. </p>
@@ -1523,7 +1523,7 @@ Constructs UpdateProjectRequest from required parameters
 #### `newUpdateProjectRequest'`
 
 ``` purescript
-newUpdateProjectRequest' :: ProjectId -> ({ contents :: NullOrUndefined (Contents), projectId :: ProjectId } -> { contents :: NullOrUndefined (Contents), projectId :: ProjectId }) -> UpdateProjectRequest
+newUpdateProjectRequest' :: ProjectId -> ({ contents :: Maybe (Contents), projectId :: ProjectId } -> { contents :: Maybe (Contents), projectId :: ProjectId }) -> UpdateProjectRequest
 ```
 
 Constructs UpdateProjectRequest's fields from required parameters
@@ -1532,7 +1532,7 @@ Constructs UpdateProjectRequest's fields from required parameters
 
 ``` purescript
 newtype UpdateProjectResult
-  = UpdateProjectResult { details :: NullOrUndefined (ProjectDetails) }
+  = UpdateProjectResult { details :: Maybe (ProjectDetails) }
 ```
 
 <p> Result structure used for requests to updated project configuration. </p>
@@ -1557,7 +1557,7 @@ Constructs UpdateProjectResult from required parameters
 #### `newUpdateProjectResult'`
 
 ``` purescript
-newUpdateProjectResult' :: ({ details :: NullOrUndefined (ProjectDetails) } -> { details :: NullOrUndefined (ProjectDetails) }) -> UpdateProjectResult
+newUpdateProjectResult' :: ({ details :: Maybe (ProjectDetails) } -> { details :: Maybe (ProjectDetails) }) -> UpdateProjectResult
 ```
 
 Constructs UpdateProjectResult's fields from required parameters

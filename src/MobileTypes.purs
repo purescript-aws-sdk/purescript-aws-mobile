@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,7 +19,7 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p> Account Action is required in order to continue the request. </p>
 newtype AccountActionRequiredException = AccountActionRequiredException 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeAccountActionRequiredException :: Newtype AccountActionRequiredException _
 derive instance repGenericAccountActionRequiredException :: Generic AccountActionRequiredException _
@@ -30,12 +29,12 @@ instance encodeAccountActionRequiredException :: Encode AccountActionRequiredExc
 
 -- | Constructs AccountActionRequiredException from required parameters
 newAccountActionRequiredException :: AccountActionRequiredException
-newAccountActionRequiredException  = AccountActionRequiredException { "message": (NullOrUndefined Nothing) }
+newAccountActionRequiredException  = AccountActionRequiredException { "message": Nothing }
 
 -- | Constructs AccountActionRequiredException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAccountActionRequiredException' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> AccountActionRequiredException
-newAccountActionRequiredException'  customize = (AccountActionRequiredException <<< customize) { "message": (NullOrUndefined Nothing) }
+newAccountActionRequiredException' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> AccountActionRequiredException
+newAccountActionRequiredException'  customize = (AccountActionRequiredException <<< customize) { "message": Nothing }
 
 
 
@@ -71,7 +70,7 @@ instance encodeAttributes :: Encode Attributes where encode = genericEncode opti
 
 -- | <p> The request cannot be processed because some parameter is not valid or the project state prevents the operation from being performed. </p>
 newtype BadRequestException = BadRequestException 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeBadRequestException :: Newtype BadRequestException _
 derive instance repGenericBadRequestException :: Generic BadRequestException _
@@ -81,12 +80,12 @@ instance encodeBadRequestException :: Encode BadRequestException where encode = 
 
 -- | Constructs BadRequestException from required parameters
 newBadRequestException :: BadRequestException
-newBadRequestException  = BadRequestException { "message": (NullOrUndefined Nothing) }
+newBadRequestException  = BadRequestException { "message": Nothing }
 
 -- | Constructs BadRequestException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBadRequestException' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> BadRequestException
-newBadRequestException'  customize = (BadRequestException <<< customize) { "message": (NullOrUndefined Nothing) }
+newBadRequestException' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> BadRequestException
+newBadRequestException'  customize = (BadRequestException <<< customize) { "message": Nothing }
 
 
 
@@ -102,12 +101,12 @@ instance encodeBundleDescription :: Encode BundleDescription where encode = gene
 
 -- | <p> The details of the bundle. </p>
 newtype BundleDetails = BundleDetails 
-  { "bundleId" :: NullOrUndefined (BundleId)
-  , "title" :: NullOrUndefined (BundleTitle)
-  , "version" :: NullOrUndefined (BundleVersion)
-  , "description" :: NullOrUndefined (BundleDescription)
-  , "iconUrl" :: NullOrUndefined (IconUrl)
-  , "availablePlatforms" :: NullOrUndefined (Platforms)
+  { "bundleId" :: Maybe (BundleId)
+  , "title" :: Maybe (BundleTitle)
+  , "version" :: Maybe (BundleVersion)
+  , "description" :: Maybe (BundleDescription)
+  , "iconUrl" :: Maybe (IconUrl)
+  , "availablePlatforms" :: Maybe (Platforms)
   }
 derive instance newtypeBundleDetails :: Newtype BundleDetails _
 derive instance repGenericBundleDetails :: Generic BundleDetails _
@@ -117,12 +116,12 @@ instance encodeBundleDetails :: Encode BundleDetails where encode = genericEncod
 
 -- | Constructs BundleDetails from required parameters
 newBundleDetails :: BundleDetails
-newBundleDetails  = BundleDetails { "availablePlatforms": (NullOrUndefined Nothing), "bundleId": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "iconUrl": (NullOrUndefined Nothing), "title": (NullOrUndefined Nothing), "version": (NullOrUndefined Nothing) }
+newBundleDetails  = BundleDetails { "availablePlatforms": Nothing, "bundleId": Nothing, "description": Nothing, "iconUrl": Nothing, "title": Nothing, "version": Nothing }
 
 -- | Constructs BundleDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newBundleDetails' :: ( { "bundleId" :: NullOrUndefined (BundleId) , "title" :: NullOrUndefined (BundleTitle) , "version" :: NullOrUndefined (BundleVersion) , "description" :: NullOrUndefined (BundleDescription) , "iconUrl" :: NullOrUndefined (IconUrl) , "availablePlatforms" :: NullOrUndefined (Platforms) } -> {"bundleId" :: NullOrUndefined (BundleId) , "title" :: NullOrUndefined (BundleTitle) , "version" :: NullOrUndefined (BundleVersion) , "description" :: NullOrUndefined (BundleDescription) , "iconUrl" :: NullOrUndefined (IconUrl) , "availablePlatforms" :: NullOrUndefined (Platforms) } ) -> BundleDetails
-newBundleDetails'  customize = (BundleDetails <<< customize) { "availablePlatforms": (NullOrUndefined Nothing), "bundleId": (NullOrUndefined Nothing), "description": (NullOrUndefined Nothing), "iconUrl": (NullOrUndefined Nothing), "title": (NullOrUndefined Nothing), "version": (NullOrUndefined Nothing) }
+newBundleDetails' :: ( { "bundleId" :: Maybe (BundleId) , "title" :: Maybe (BundleTitle) , "version" :: Maybe (BundleVersion) , "description" :: Maybe (BundleDescription) , "iconUrl" :: Maybe (IconUrl) , "availablePlatforms" :: Maybe (Platforms) } -> {"bundleId" :: Maybe (BundleId) , "title" :: Maybe (BundleTitle) , "version" :: Maybe (BundleVersion) , "description" :: Maybe (BundleDescription) , "iconUrl" :: Maybe (IconUrl) , "availablePlatforms" :: Maybe (Platforms) } ) -> BundleDetails
+newBundleDetails'  customize = (BundleDetails <<< customize) { "availablePlatforms": Nothing, "bundleId": Nothing, "description": Nothing, "iconUrl": Nothing, "title": Nothing, "version": Nothing }
 
 
 
@@ -187,10 +186,10 @@ instance encodeContents :: Encode Contents where encode = genericEncode options
 
 -- | <p> Request structure used to request a project be created. </p>
 newtype CreateProjectRequest = CreateProjectRequest 
-  { "name" :: NullOrUndefined (ProjectName)
-  , "region" :: NullOrUndefined (ProjectRegion)
-  , "contents" :: NullOrUndefined (Contents)
-  , "snapshotId" :: NullOrUndefined (SnapshotId)
+  { "name" :: Maybe (ProjectName)
+  , "region" :: Maybe (ProjectRegion)
+  , "contents" :: Maybe (Contents)
+  , "snapshotId" :: Maybe (SnapshotId)
   }
 derive instance newtypeCreateProjectRequest :: Newtype CreateProjectRequest _
 derive instance repGenericCreateProjectRequest :: Generic CreateProjectRequest _
@@ -200,18 +199,18 @@ instance encodeCreateProjectRequest :: Encode CreateProjectRequest where encode 
 
 -- | Constructs CreateProjectRequest from required parameters
 newCreateProjectRequest :: CreateProjectRequest
-newCreateProjectRequest  = CreateProjectRequest { "contents": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "region": (NullOrUndefined Nothing), "snapshotId": (NullOrUndefined Nothing) }
+newCreateProjectRequest  = CreateProjectRequest { "contents": Nothing, "name": Nothing, "region": Nothing, "snapshotId": Nothing }
 
 -- | Constructs CreateProjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateProjectRequest' :: ( { "name" :: NullOrUndefined (ProjectName) , "region" :: NullOrUndefined (ProjectRegion) , "contents" :: NullOrUndefined (Contents) , "snapshotId" :: NullOrUndefined (SnapshotId) } -> {"name" :: NullOrUndefined (ProjectName) , "region" :: NullOrUndefined (ProjectRegion) , "contents" :: NullOrUndefined (Contents) , "snapshotId" :: NullOrUndefined (SnapshotId) } ) -> CreateProjectRequest
-newCreateProjectRequest'  customize = (CreateProjectRequest <<< customize) { "contents": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "region": (NullOrUndefined Nothing), "snapshotId": (NullOrUndefined Nothing) }
+newCreateProjectRequest' :: ( { "name" :: Maybe (ProjectName) , "region" :: Maybe (ProjectRegion) , "contents" :: Maybe (Contents) , "snapshotId" :: Maybe (SnapshotId) } -> {"name" :: Maybe (ProjectName) , "region" :: Maybe (ProjectRegion) , "contents" :: Maybe (Contents) , "snapshotId" :: Maybe (SnapshotId) } ) -> CreateProjectRequest
+newCreateProjectRequest'  customize = (CreateProjectRequest <<< customize) { "contents": Nothing, "name": Nothing, "region": Nothing, "snapshotId": Nothing }
 
 
 
 -- | <p> Result structure used in response to a request to create a project. </p>
 newtype CreateProjectResult = CreateProjectResult 
-  { "details" :: NullOrUndefined (ProjectDetails)
+  { "details" :: Maybe (ProjectDetails)
   }
 derive instance newtypeCreateProjectResult :: Newtype CreateProjectResult _
 derive instance repGenericCreateProjectResult :: Generic CreateProjectResult _
@@ -221,12 +220,12 @@ instance encodeCreateProjectResult :: Encode CreateProjectResult where encode = 
 
 -- | Constructs CreateProjectResult from required parameters
 newCreateProjectResult :: CreateProjectResult
-newCreateProjectResult  = CreateProjectResult { "details": (NullOrUndefined Nothing) }
+newCreateProjectResult  = CreateProjectResult { "details": Nothing }
 
 -- | Constructs CreateProjectResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateProjectResult' :: ( { "details" :: NullOrUndefined (ProjectDetails) } -> {"details" :: NullOrUndefined (ProjectDetails) } ) -> CreateProjectResult
-newCreateProjectResult'  customize = (CreateProjectResult <<< customize) { "details": (NullOrUndefined Nothing) }
+newCreateProjectResult' :: ( { "details" :: Maybe (ProjectDetails) } -> {"details" :: Maybe (ProjectDetails) } ) -> CreateProjectResult
+newCreateProjectResult'  customize = (CreateProjectResult <<< customize) { "details": Nothing }
 
 
 
@@ -262,8 +261,8 @@ newDeleteProjectRequest' _projectId customize = (DeleteProjectRequest <<< custom
 
 -- | <p> Result structure used in response to request to delete a project. </p>
 newtype DeleteProjectResult = DeleteProjectResult 
-  { "deletedResources" :: NullOrUndefined (Resources)
-  , "orphanedResources" :: NullOrUndefined (Resources)
+  { "deletedResources" :: Maybe (Resources)
+  , "orphanedResources" :: Maybe (Resources)
   }
 derive instance newtypeDeleteProjectResult :: Newtype DeleteProjectResult _
 derive instance repGenericDeleteProjectResult :: Generic DeleteProjectResult _
@@ -273,12 +272,12 @@ instance encodeDeleteProjectResult :: Encode DeleteProjectResult where encode = 
 
 -- | Constructs DeleteProjectResult from required parameters
 newDeleteProjectResult :: DeleteProjectResult
-newDeleteProjectResult  = DeleteProjectResult { "deletedResources": (NullOrUndefined Nothing), "orphanedResources": (NullOrUndefined Nothing) }
+newDeleteProjectResult  = DeleteProjectResult { "deletedResources": Nothing, "orphanedResources": Nothing }
 
 -- | Constructs DeleteProjectResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDeleteProjectResult' :: ( { "deletedResources" :: NullOrUndefined (Resources) , "orphanedResources" :: NullOrUndefined (Resources) } -> {"deletedResources" :: NullOrUndefined (Resources) , "orphanedResources" :: NullOrUndefined (Resources) } ) -> DeleteProjectResult
-newDeleteProjectResult'  customize = (DeleteProjectResult <<< customize) { "deletedResources": (NullOrUndefined Nothing), "orphanedResources": (NullOrUndefined Nothing) }
+newDeleteProjectResult' :: ( { "deletedResources" :: Maybe (Resources) , "orphanedResources" :: Maybe (Resources) } -> {"deletedResources" :: Maybe (Resources) , "orphanedResources" :: Maybe (Resources) } ) -> DeleteProjectResult
+newDeleteProjectResult'  customize = (DeleteProjectResult <<< customize) { "deletedResources": Nothing, "orphanedResources": Nothing }
 
 
 
@@ -305,7 +304,7 @@ newDescribeBundleRequest' _bundleId customize = (DescribeBundleRequest <<< custo
 
 -- | <p> Result structure contains the details of the bundle. </p>
 newtype DescribeBundleResult = DescribeBundleResult 
-  { "details" :: NullOrUndefined (BundleDetails)
+  { "details" :: Maybe (BundleDetails)
   }
 derive instance newtypeDescribeBundleResult :: Newtype DescribeBundleResult _
 derive instance repGenericDescribeBundleResult :: Generic DescribeBundleResult _
@@ -315,19 +314,19 @@ instance encodeDescribeBundleResult :: Encode DescribeBundleResult where encode 
 
 -- | Constructs DescribeBundleResult from required parameters
 newDescribeBundleResult :: DescribeBundleResult
-newDescribeBundleResult  = DescribeBundleResult { "details": (NullOrUndefined Nothing) }
+newDescribeBundleResult  = DescribeBundleResult { "details": Nothing }
 
 -- | Constructs DescribeBundleResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeBundleResult' :: ( { "details" :: NullOrUndefined (BundleDetails) } -> {"details" :: NullOrUndefined (BundleDetails) } ) -> DescribeBundleResult
-newDescribeBundleResult'  customize = (DescribeBundleResult <<< customize) { "details": (NullOrUndefined Nothing) }
+newDescribeBundleResult' :: ( { "details" :: Maybe (BundleDetails) } -> {"details" :: Maybe (BundleDetails) } ) -> DescribeBundleResult
+newDescribeBundleResult'  customize = (DescribeBundleResult <<< customize) { "details": Nothing }
 
 
 
 -- | <p> Request structure used to request details about a project. </p>
 newtype DescribeProjectRequest = DescribeProjectRequest 
   { "projectId" :: (ProjectId)
-  , "syncFromResources" :: NullOrUndefined (Boolean)
+  , "syncFromResources" :: Maybe (Boolean)
   }
 derive instance newtypeDescribeProjectRequest :: Newtype DescribeProjectRequest _
 derive instance repGenericDescribeProjectRequest :: Generic DescribeProjectRequest _
@@ -337,18 +336,18 @@ instance encodeDescribeProjectRequest :: Encode DescribeProjectRequest where enc
 
 -- | Constructs DescribeProjectRequest from required parameters
 newDescribeProjectRequest :: ProjectId -> DescribeProjectRequest
-newDescribeProjectRequest _projectId = DescribeProjectRequest { "projectId": _projectId, "syncFromResources": (NullOrUndefined Nothing) }
+newDescribeProjectRequest _projectId = DescribeProjectRequest { "projectId": _projectId, "syncFromResources": Nothing }
 
 -- | Constructs DescribeProjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeProjectRequest' :: ProjectId -> ( { "projectId" :: (ProjectId) , "syncFromResources" :: NullOrUndefined (Boolean) } -> {"projectId" :: (ProjectId) , "syncFromResources" :: NullOrUndefined (Boolean) } ) -> DescribeProjectRequest
-newDescribeProjectRequest' _projectId customize = (DescribeProjectRequest <<< customize) { "projectId": _projectId, "syncFromResources": (NullOrUndefined Nothing) }
+newDescribeProjectRequest' :: ProjectId -> ( { "projectId" :: (ProjectId) , "syncFromResources" :: Maybe (Boolean) } -> {"projectId" :: (ProjectId) , "syncFromResources" :: Maybe (Boolean) } ) -> DescribeProjectRequest
+newDescribeProjectRequest' _projectId customize = (DescribeProjectRequest <<< customize) { "projectId": _projectId, "syncFromResources": Nothing }
 
 
 
 -- | <p> Result structure used for requests of project details. </p>
 newtype DescribeProjectResult = DescribeProjectResult 
-  { "details" :: NullOrUndefined (ProjectDetails)
+  { "details" :: Maybe (ProjectDetails)
   }
 derive instance newtypeDescribeProjectResult :: Newtype DescribeProjectResult _
 derive instance repGenericDescribeProjectResult :: Generic DescribeProjectResult _
@@ -358,12 +357,12 @@ instance encodeDescribeProjectResult :: Encode DescribeProjectResult where encod
 
 -- | Constructs DescribeProjectResult from required parameters
 newDescribeProjectResult :: DescribeProjectResult
-newDescribeProjectResult  = DescribeProjectResult { "details": (NullOrUndefined Nothing) }
+newDescribeProjectResult  = DescribeProjectResult { "details": Nothing }
 
 -- | Constructs DescribeProjectResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeProjectResult' :: ( { "details" :: NullOrUndefined (ProjectDetails) } -> {"details" :: NullOrUndefined (ProjectDetails) } ) -> DescribeProjectResult
-newDescribeProjectResult'  customize = (DescribeProjectResult <<< customize) { "details": (NullOrUndefined Nothing) }
+newDescribeProjectResult' :: ( { "details" :: Maybe (ProjectDetails) } -> {"details" :: Maybe (ProjectDetails) } ) -> DescribeProjectResult
+newDescribeProjectResult'  customize = (DescribeProjectResult <<< customize) { "details": Nothing }
 
 
 
@@ -390,8 +389,8 @@ instance encodeErrorMessage :: Encode ErrorMessage where encode = genericEncode 
 -- | <p> Request structure used to request generation of custom SDK and tool packages required to integrate mobile web or app clients with backed AWS resources. </p>
 newtype ExportBundleRequest = ExportBundleRequest 
   { "bundleId" :: (BundleId)
-  , "projectId" :: NullOrUndefined (ProjectId)
-  , "platform" :: NullOrUndefined (Platform)
+  , "projectId" :: Maybe (ProjectId)
+  , "platform" :: Maybe (Platform)
   }
 derive instance newtypeExportBundleRequest :: Newtype ExportBundleRequest _
 derive instance repGenericExportBundleRequest :: Generic ExportBundleRequest _
@@ -401,18 +400,18 @@ instance encodeExportBundleRequest :: Encode ExportBundleRequest where encode = 
 
 -- | Constructs ExportBundleRequest from required parameters
 newExportBundleRequest :: BundleId -> ExportBundleRequest
-newExportBundleRequest _bundleId = ExportBundleRequest { "bundleId": _bundleId, "platform": (NullOrUndefined Nothing), "projectId": (NullOrUndefined Nothing) }
+newExportBundleRequest _bundleId = ExportBundleRequest { "bundleId": _bundleId, "platform": Nothing, "projectId": Nothing }
 
 -- | Constructs ExportBundleRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newExportBundleRequest' :: BundleId -> ( { "bundleId" :: (BundleId) , "projectId" :: NullOrUndefined (ProjectId) , "platform" :: NullOrUndefined (Platform) } -> {"bundleId" :: (BundleId) , "projectId" :: NullOrUndefined (ProjectId) , "platform" :: NullOrUndefined (Platform) } ) -> ExportBundleRequest
-newExportBundleRequest' _bundleId customize = (ExportBundleRequest <<< customize) { "bundleId": _bundleId, "platform": (NullOrUndefined Nothing), "projectId": (NullOrUndefined Nothing) }
+newExportBundleRequest' :: BundleId -> ( { "bundleId" :: (BundleId) , "projectId" :: Maybe (ProjectId) , "platform" :: Maybe (Platform) } -> {"bundleId" :: (BundleId) , "projectId" :: Maybe (ProjectId) , "platform" :: Maybe (Platform) } ) -> ExportBundleRequest
+newExportBundleRequest' _bundleId customize = (ExportBundleRequest <<< customize) { "bundleId": _bundleId, "platform": Nothing, "projectId": Nothing }
 
 
 
 -- | <p> Result structure which contains link to download custom-generated SDK and tool packages used to integrate mobile web or app clients with backed AWS resources. </p>
 newtype ExportBundleResult = ExportBundleResult 
-  { "downloadUrl" :: NullOrUndefined (DownloadUrl)
+  { "downloadUrl" :: Maybe (DownloadUrl)
   }
 derive instance newtypeExportBundleResult :: Newtype ExportBundleResult _
 derive instance repGenericExportBundleResult :: Generic ExportBundleResult _
@@ -422,12 +421,12 @@ instance encodeExportBundleResult :: Encode ExportBundleResult where encode = ge
 
 -- | Constructs ExportBundleResult from required parameters
 newExportBundleResult :: ExportBundleResult
-newExportBundleResult  = ExportBundleResult { "downloadUrl": (NullOrUndefined Nothing) }
+newExportBundleResult  = ExportBundleResult { "downloadUrl": Nothing }
 
 -- | Constructs ExportBundleResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newExportBundleResult' :: ( { "downloadUrl" :: NullOrUndefined (DownloadUrl) } -> {"downloadUrl" :: NullOrUndefined (DownloadUrl) } ) -> ExportBundleResult
-newExportBundleResult'  customize = (ExportBundleResult <<< customize) { "downloadUrl": (NullOrUndefined Nothing) }
+newExportBundleResult' :: ( { "downloadUrl" :: Maybe (DownloadUrl) } -> {"downloadUrl" :: Maybe (DownloadUrl) } ) -> ExportBundleResult
+newExportBundleResult'  customize = (ExportBundleResult <<< customize) { "downloadUrl": Nothing }
 
 
 
@@ -454,9 +453,9 @@ newExportProjectRequest' _projectId customize = (ExportProjectRequest <<< custom
 
 -- | <p> Result structure used for requests to export project configuration details. </p>
 newtype ExportProjectResult = ExportProjectResult 
-  { "downloadUrl" :: NullOrUndefined (DownloadUrl)
-  , "shareUrl" :: NullOrUndefined (ShareUrl)
-  , "snapshotId" :: NullOrUndefined (SnapshotId)
+  { "downloadUrl" :: Maybe (DownloadUrl)
+  , "shareUrl" :: Maybe (ShareUrl)
+  , "snapshotId" :: Maybe (SnapshotId)
   }
 derive instance newtypeExportProjectResult :: Newtype ExportProjectResult _
 derive instance repGenericExportProjectResult :: Generic ExportProjectResult _
@@ -466,12 +465,12 @@ instance encodeExportProjectResult :: Encode ExportProjectResult where encode = 
 
 -- | Constructs ExportProjectResult from required parameters
 newExportProjectResult :: ExportProjectResult
-newExportProjectResult  = ExportProjectResult { "downloadUrl": (NullOrUndefined Nothing), "shareUrl": (NullOrUndefined Nothing), "snapshotId": (NullOrUndefined Nothing) }
+newExportProjectResult  = ExportProjectResult { "downloadUrl": Nothing, "shareUrl": Nothing, "snapshotId": Nothing }
 
 -- | Constructs ExportProjectResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newExportProjectResult' :: ( { "downloadUrl" :: NullOrUndefined (DownloadUrl) , "shareUrl" :: NullOrUndefined (ShareUrl) , "snapshotId" :: NullOrUndefined (SnapshotId) } -> {"downloadUrl" :: NullOrUndefined (DownloadUrl) , "shareUrl" :: NullOrUndefined (ShareUrl) , "snapshotId" :: NullOrUndefined (SnapshotId) } ) -> ExportProjectResult
-newExportProjectResult'  customize = (ExportProjectResult <<< customize) { "downloadUrl": (NullOrUndefined Nothing), "shareUrl": (NullOrUndefined Nothing), "snapshotId": (NullOrUndefined Nothing) }
+newExportProjectResult' :: ( { "downloadUrl" :: Maybe (DownloadUrl) , "shareUrl" :: Maybe (ShareUrl) , "snapshotId" :: Maybe (SnapshotId) } -> {"downloadUrl" :: Maybe (DownloadUrl) , "shareUrl" :: Maybe (ShareUrl) , "snapshotId" :: Maybe (SnapshotId) } ) -> ExportProjectResult
+newExportProjectResult'  customize = (ExportProjectResult <<< customize) { "downloadUrl": Nothing, "shareUrl": Nothing, "snapshotId": Nothing }
 
 
 
@@ -497,7 +496,7 @@ instance encodeIconUrl :: Encode IconUrl where encode = genericEncode options
 
 -- | <p> The service has encountered an unexpected error condition which prevents it from servicing the request. </p>
 newtype InternalFailureException = InternalFailureException 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeInternalFailureException :: Newtype InternalFailureException _
 derive instance repGenericInternalFailureException :: Generic InternalFailureException _
@@ -507,19 +506,19 @@ instance encodeInternalFailureException :: Encode InternalFailureException where
 
 -- | Constructs InternalFailureException from required parameters
 newInternalFailureException :: InternalFailureException
-newInternalFailureException  = InternalFailureException { "message": (NullOrUndefined Nothing) }
+newInternalFailureException  = InternalFailureException { "message": Nothing }
 
 -- | Constructs InternalFailureException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInternalFailureException' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> InternalFailureException
-newInternalFailureException'  customize = (InternalFailureException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInternalFailureException' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> InternalFailureException
+newInternalFailureException'  customize = (InternalFailureException <<< customize) { "message": Nothing }
 
 
 
 -- | <p> There are too many AWS Mobile Hub projects in the account or the account has exceeded the maximum number of resources in some AWS service. You should create another sub-account using AWS Organizations or remove some resources and retry your request. </p>
 newtype LimitExceededException = LimitExceededException 
-  { "retryAfterSeconds" :: NullOrUndefined (ErrorMessage)
-  , "message" :: NullOrUndefined (ErrorMessage)
+  { "retryAfterSeconds" :: Maybe (ErrorMessage)
+  , "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeLimitExceededException :: Newtype LimitExceededException _
 derive instance repGenericLimitExceededException :: Generic LimitExceededException _
@@ -529,19 +528,19 @@ instance encodeLimitExceededException :: Encode LimitExceededException where enc
 
 -- | Constructs LimitExceededException from required parameters
 newLimitExceededException :: LimitExceededException
-newLimitExceededException  = LimitExceededException { "message": (NullOrUndefined Nothing), "retryAfterSeconds": (NullOrUndefined Nothing) }
+newLimitExceededException  = LimitExceededException { "message": Nothing, "retryAfterSeconds": Nothing }
 
 -- | Constructs LimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimitExceededException' :: ( { "retryAfterSeconds" :: NullOrUndefined (ErrorMessage) , "message" :: NullOrUndefined (ErrorMessage) } -> {"retryAfterSeconds" :: NullOrUndefined (ErrorMessage) , "message" :: NullOrUndefined (ErrorMessage) } ) -> LimitExceededException
-newLimitExceededException'  customize = (LimitExceededException <<< customize) { "message": (NullOrUndefined Nothing), "retryAfterSeconds": (NullOrUndefined Nothing) }
+newLimitExceededException' :: ( { "retryAfterSeconds" :: Maybe (ErrorMessage) , "message" :: Maybe (ErrorMessage) } -> {"retryAfterSeconds" :: Maybe (ErrorMessage) , "message" :: Maybe (ErrorMessage) } ) -> LimitExceededException
+newLimitExceededException'  customize = (LimitExceededException <<< customize) { "message": Nothing, "retryAfterSeconds": Nothing }
 
 
 
 -- | <p> Request structure to request all available bundles. </p>
 newtype ListBundlesRequest = ListBundlesRequest 
-  { "maxResults" :: NullOrUndefined (MaxResults)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "maxResults" :: Maybe (MaxResults)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListBundlesRequest :: Newtype ListBundlesRequest _
 derive instance repGenericListBundlesRequest :: Generic ListBundlesRequest _
@@ -551,19 +550,19 @@ instance encodeListBundlesRequest :: Encode ListBundlesRequest where encode = ge
 
 -- | Constructs ListBundlesRequest from required parameters
 newListBundlesRequest :: ListBundlesRequest
-newListBundlesRequest  = ListBundlesRequest { "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBundlesRequest  = ListBundlesRequest { "maxResults": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListBundlesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBundlesRequest' :: ( { "maxResults" :: NullOrUndefined (MaxResults) , "nextToken" :: NullOrUndefined (NextToken) } -> {"maxResults" :: NullOrUndefined (MaxResults) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListBundlesRequest
-newListBundlesRequest'  customize = (ListBundlesRequest <<< customize) { "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBundlesRequest' :: ( { "maxResults" :: Maybe (MaxResults) , "nextToken" :: Maybe (NextToken) } -> {"maxResults" :: Maybe (MaxResults) , "nextToken" :: Maybe (NextToken) } ) -> ListBundlesRequest
+newListBundlesRequest'  customize = (ListBundlesRequest <<< customize) { "maxResults": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p> Result structure contains a list of all available bundles with details. </p>
 newtype ListBundlesResult = ListBundlesResult 
-  { "bundleList" :: NullOrUndefined (BundleList)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "bundleList" :: Maybe (BundleList)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListBundlesResult :: Newtype ListBundlesResult _
 derive instance repGenericListBundlesResult :: Generic ListBundlesResult _
@@ -573,19 +572,19 @@ instance encodeListBundlesResult :: Encode ListBundlesResult where encode = gene
 
 -- | Constructs ListBundlesResult from required parameters
 newListBundlesResult :: ListBundlesResult
-newListBundlesResult  = ListBundlesResult { "bundleList": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBundlesResult  = ListBundlesResult { "bundleList": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListBundlesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListBundlesResult' :: ( { "bundleList" :: NullOrUndefined (BundleList) , "nextToken" :: NullOrUndefined (NextToken) } -> {"bundleList" :: NullOrUndefined (BundleList) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListBundlesResult
-newListBundlesResult'  customize = (ListBundlesResult <<< customize) { "bundleList": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListBundlesResult' :: ( { "bundleList" :: Maybe (BundleList) , "nextToken" :: Maybe (NextToken) } -> {"bundleList" :: Maybe (BundleList) , "nextToken" :: Maybe (NextToken) } ) -> ListBundlesResult
+newListBundlesResult'  customize = (ListBundlesResult <<< customize) { "bundleList": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p> Request structure used to request projects list in AWS Mobile Hub. </p>
 newtype ListProjectsRequest = ListProjectsRequest 
-  { "maxResults" :: NullOrUndefined (MaxResults)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "maxResults" :: Maybe (MaxResults)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListProjectsRequest :: Newtype ListProjectsRequest _
 derive instance repGenericListProjectsRequest :: Generic ListProjectsRequest _
@@ -595,19 +594,19 @@ instance encodeListProjectsRequest :: Encode ListProjectsRequest where encode = 
 
 -- | Constructs ListProjectsRequest from required parameters
 newListProjectsRequest :: ListProjectsRequest
-newListProjectsRequest  = ListProjectsRequest { "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListProjectsRequest  = ListProjectsRequest { "maxResults": Nothing, "nextToken": Nothing }
 
 -- | Constructs ListProjectsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListProjectsRequest' :: ( { "maxResults" :: NullOrUndefined (MaxResults) , "nextToken" :: NullOrUndefined (NextToken) } -> {"maxResults" :: NullOrUndefined (MaxResults) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListProjectsRequest
-newListProjectsRequest'  customize = (ListProjectsRequest <<< customize) { "maxResults": (NullOrUndefined Nothing), "nextToken": (NullOrUndefined Nothing) }
+newListProjectsRequest' :: ( { "maxResults" :: Maybe (MaxResults) , "nextToken" :: Maybe (NextToken) } -> {"maxResults" :: Maybe (MaxResults) , "nextToken" :: Maybe (NextToken) } ) -> ListProjectsRequest
+newListProjectsRequest'  customize = (ListProjectsRequest <<< customize) { "maxResults": Nothing, "nextToken": Nothing }
 
 
 
 -- | <p> Result structure used for requests to list projects in AWS Mobile Hub. </p>
 newtype ListProjectsResult = ListProjectsResult 
-  { "projects" :: NullOrUndefined (ProjectSummaries)
-  , "nextToken" :: NullOrUndefined (NextToken)
+  { "projects" :: Maybe (ProjectSummaries)
+  , "nextToken" :: Maybe (NextToken)
   }
 derive instance newtypeListProjectsResult :: Newtype ListProjectsResult _
 derive instance repGenericListProjectsResult :: Generic ListProjectsResult _
@@ -617,12 +616,12 @@ instance encodeListProjectsResult :: Encode ListProjectsResult where encode = ge
 
 -- | Constructs ListProjectsResult from required parameters
 newListProjectsResult :: ListProjectsResult
-newListProjectsResult  = ListProjectsResult { "nextToken": (NullOrUndefined Nothing), "projects": (NullOrUndefined Nothing) }
+newListProjectsResult  = ListProjectsResult { "nextToken": Nothing, "projects": Nothing }
 
 -- | Constructs ListProjectsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListProjectsResult' :: ( { "projects" :: NullOrUndefined (ProjectSummaries) , "nextToken" :: NullOrUndefined (NextToken) } -> {"projects" :: NullOrUndefined (ProjectSummaries) , "nextToken" :: NullOrUndefined (NextToken) } ) -> ListProjectsResult
-newListProjectsResult'  customize = (ListProjectsResult <<< customize) { "nextToken": (NullOrUndefined Nothing), "projects": (NullOrUndefined Nothing) }
+newListProjectsResult' :: ( { "projects" :: Maybe (ProjectSummaries) , "nextToken" :: Maybe (NextToken) } -> {"projects" :: Maybe (ProjectSummaries) , "nextToken" :: Maybe (NextToken) } ) -> ListProjectsResult
+newListProjectsResult'  customize = (ListProjectsResult <<< customize) { "nextToken": Nothing, "projects": Nothing }
 
 
 
@@ -648,7 +647,7 @@ instance encodeNextToken :: Encode NextToken where encode = genericEncode option
 
 -- | <p> No entity can be found with the specified identifier. </p>
 newtype NotFoundException = NotFoundException 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeNotFoundException :: Newtype NotFoundException _
 derive instance repGenericNotFoundException :: Generic NotFoundException _
@@ -658,12 +657,12 @@ instance encodeNotFoundException :: Encode NotFoundException where encode = gene
 
 -- | Constructs NotFoundException from required parameters
 newNotFoundException :: NotFoundException
-newNotFoundException  = NotFoundException { "message": (NullOrUndefined Nothing) }
+newNotFoundException  = NotFoundException { "message": Nothing }
 
 -- | Constructs NotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotFoundException' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> NotFoundException
-newNotFoundException'  customize = (NotFoundException <<< customize) { "message": (NullOrUndefined Nothing) }
+newNotFoundException' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> NotFoundException
+newNotFoundException'  customize = (NotFoundException <<< customize) { "message": Nothing }
 
 
 
@@ -689,14 +688,14 @@ instance encodePlatforms :: Encode Platforms where encode = genericEncode option
 
 -- | <p> Detailed information about an AWS Mobile Hub project. </p>
 newtype ProjectDetails = ProjectDetails 
-  { "name" :: NullOrUndefined (ProjectName)
-  , "projectId" :: NullOrUndefined (ProjectId)
-  , "region" :: NullOrUndefined (ProjectRegion)
-  , "state" :: NullOrUndefined (ProjectState)
-  , "createdDate" :: NullOrUndefined (Date)
-  , "lastUpdatedDate" :: NullOrUndefined (Date)
-  , "consoleUrl" :: NullOrUndefined (ConsoleUrl)
-  , "resources" :: NullOrUndefined (Resources)
+  { "name" :: Maybe (ProjectName)
+  , "projectId" :: Maybe (ProjectId)
+  , "region" :: Maybe (ProjectRegion)
+  , "state" :: Maybe (ProjectState)
+  , "createdDate" :: Maybe (Date)
+  , "lastUpdatedDate" :: Maybe (Date)
+  , "consoleUrl" :: Maybe (ConsoleUrl)
+  , "resources" :: Maybe (Resources)
   }
 derive instance newtypeProjectDetails :: Newtype ProjectDetails _
 derive instance repGenericProjectDetails :: Generic ProjectDetails _
@@ -706,12 +705,12 @@ instance encodeProjectDetails :: Encode ProjectDetails where encode = genericEnc
 
 -- | Constructs ProjectDetails from required parameters
 newProjectDetails :: ProjectDetails
-newProjectDetails  = ProjectDetails { "consoleUrl": (NullOrUndefined Nothing), "createdDate": (NullOrUndefined Nothing), "lastUpdatedDate": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "projectId": (NullOrUndefined Nothing), "region": (NullOrUndefined Nothing), "resources": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newProjectDetails  = ProjectDetails { "consoleUrl": Nothing, "createdDate": Nothing, "lastUpdatedDate": Nothing, "name": Nothing, "projectId": Nothing, "region": Nothing, "resources": Nothing, "state": Nothing }
 
 -- | Constructs ProjectDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProjectDetails' :: ( { "name" :: NullOrUndefined (ProjectName) , "projectId" :: NullOrUndefined (ProjectId) , "region" :: NullOrUndefined (ProjectRegion) , "state" :: NullOrUndefined (ProjectState) , "createdDate" :: NullOrUndefined (Date) , "lastUpdatedDate" :: NullOrUndefined (Date) , "consoleUrl" :: NullOrUndefined (ConsoleUrl) , "resources" :: NullOrUndefined (Resources) } -> {"name" :: NullOrUndefined (ProjectName) , "projectId" :: NullOrUndefined (ProjectId) , "region" :: NullOrUndefined (ProjectRegion) , "state" :: NullOrUndefined (ProjectState) , "createdDate" :: NullOrUndefined (Date) , "lastUpdatedDate" :: NullOrUndefined (Date) , "consoleUrl" :: NullOrUndefined (ConsoleUrl) , "resources" :: NullOrUndefined (Resources) } ) -> ProjectDetails
-newProjectDetails'  customize = (ProjectDetails <<< customize) { "consoleUrl": (NullOrUndefined Nothing), "createdDate": (NullOrUndefined Nothing), "lastUpdatedDate": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "projectId": (NullOrUndefined Nothing), "region": (NullOrUndefined Nothing), "resources": (NullOrUndefined Nothing), "state": (NullOrUndefined Nothing) }
+newProjectDetails' :: ( { "name" :: Maybe (ProjectName) , "projectId" :: Maybe (ProjectId) , "region" :: Maybe (ProjectRegion) , "state" :: Maybe (ProjectState) , "createdDate" :: Maybe (Date) , "lastUpdatedDate" :: Maybe (Date) , "consoleUrl" :: Maybe (ConsoleUrl) , "resources" :: Maybe (Resources) } -> {"name" :: Maybe (ProjectName) , "projectId" :: Maybe (ProjectId) , "region" :: Maybe (ProjectRegion) , "state" :: Maybe (ProjectState) , "createdDate" :: Maybe (Date) , "lastUpdatedDate" :: Maybe (Date) , "consoleUrl" :: Maybe (ConsoleUrl) , "resources" :: Maybe (Resources) } ) -> ProjectDetails
+newProjectDetails'  customize = (ProjectDetails <<< customize) { "consoleUrl": Nothing, "createdDate": Nothing, "lastUpdatedDate": Nothing, "name": Nothing, "projectId": Nothing, "region": Nothing, "resources": Nothing, "state": Nothing }
 
 
 
@@ -767,8 +766,8 @@ instance encodeProjectSummaries :: Encode ProjectSummaries where encode = generi
 
 -- | <p> Summary information about an AWS Mobile Hub project. </p>
 newtype ProjectSummary = ProjectSummary 
-  { "name" :: NullOrUndefined (ProjectName)
-  , "projectId" :: NullOrUndefined (ProjectId)
+  { "name" :: Maybe (ProjectName)
+  , "projectId" :: Maybe (ProjectId)
   }
 derive instance newtypeProjectSummary :: Newtype ProjectSummary _
 derive instance repGenericProjectSummary :: Generic ProjectSummary _
@@ -778,22 +777,22 @@ instance encodeProjectSummary :: Encode ProjectSummary where encode = genericEnc
 
 -- | Constructs ProjectSummary from required parameters
 newProjectSummary :: ProjectSummary
-newProjectSummary  = ProjectSummary { "name": (NullOrUndefined Nothing), "projectId": (NullOrUndefined Nothing) }
+newProjectSummary  = ProjectSummary { "name": Nothing, "projectId": Nothing }
 
 -- | Constructs ProjectSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newProjectSummary' :: ( { "name" :: NullOrUndefined (ProjectName) , "projectId" :: NullOrUndefined (ProjectId) } -> {"name" :: NullOrUndefined (ProjectName) , "projectId" :: NullOrUndefined (ProjectId) } ) -> ProjectSummary
-newProjectSummary'  customize = (ProjectSummary <<< customize) { "name": (NullOrUndefined Nothing), "projectId": (NullOrUndefined Nothing) }
+newProjectSummary' :: ( { "name" :: Maybe (ProjectName) , "projectId" :: Maybe (ProjectId) } -> {"name" :: Maybe (ProjectName) , "projectId" :: Maybe (ProjectId) } ) -> ProjectSummary
+newProjectSummary'  customize = (ProjectSummary <<< customize) { "name": Nothing, "projectId": Nothing }
 
 
 
 -- | <p> Information about an instance of an AWS resource associated with a project. </p>
 newtype Resource = Resource 
-  { "type" :: NullOrUndefined (ResourceType)
-  , "name" :: NullOrUndefined (ResourceName)
-  , "arn" :: NullOrUndefined (ResourceArn)
-  , "feature" :: NullOrUndefined (Feature)
-  , "attributes" :: NullOrUndefined (Attributes)
+  { "type" :: Maybe (ResourceType)
+  , "name" :: Maybe (ResourceName)
+  , "arn" :: Maybe (ResourceArn)
+  , "feature" :: Maybe (Feature)
+  , "attributes" :: Maybe (Attributes)
   }
 derive instance newtypeResource :: Newtype Resource _
 derive instance repGenericResource :: Generic Resource _
@@ -803,12 +802,12 @@ instance encodeResource :: Encode Resource where encode = genericEncode options
 
 -- | Constructs Resource from required parameters
 newResource :: Resource
-newResource  = Resource { "arn": (NullOrUndefined Nothing), "attributes": (NullOrUndefined Nothing), "feature": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newResource  = Resource { "arn": Nothing, "attributes": Nothing, "feature": Nothing, "name": Nothing, "type": Nothing }
 
 -- | Constructs Resource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResource' :: ( { "type" :: NullOrUndefined (ResourceType) , "name" :: NullOrUndefined (ResourceName) , "arn" :: NullOrUndefined (ResourceArn) , "feature" :: NullOrUndefined (Feature) , "attributes" :: NullOrUndefined (Attributes) } -> {"type" :: NullOrUndefined (ResourceType) , "name" :: NullOrUndefined (ResourceName) , "arn" :: NullOrUndefined (ResourceArn) , "feature" :: NullOrUndefined (Feature) , "attributes" :: NullOrUndefined (Attributes) } ) -> Resource
-newResource'  customize = (Resource <<< customize) { "arn": (NullOrUndefined Nothing), "attributes": (NullOrUndefined Nothing), "feature": (NullOrUndefined Nothing), "name": (NullOrUndefined Nothing), "type": (NullOrUndefined Nothing) }
+newResource' :: ( { "type" :: Maybe (ResourceType) , "name" :: Maybe (ResourceName) , "arn" :: Maybe (ResourceArn) , "feature" :: Maybe (Feature) , "attributes" :: Maybe (Attributes) } -> {"type" :: Maybe (ResourceType) , "name" :: Maybe (ResourceName) , "arn" :: Maybe (ResourceArn) , "feature" :: Maybe (Feature) , "attributes" :: Maybe (Attributes) } ) -> Resource
+newResource'  customize = (Resource <<< customize) { "arn": Nothing, "attributes": Nothing, "feature": Nothing, "name": Nothing, "type": Nothing }
 
 
 
@@ -854,8 +853,8 @@ instance encodeResources :: Encode Resources where encode = genericEncode option
 
 -- | <p> The service is temporarily unavailable. The request should be retried after some time delay. </p>
 newtype ServiceUnavailableException = ServiceUnavailableException 
-  { "retryAfterSeconds" :: NullOrUndefined (ErrorMessage)
-  , "message" :: NullOrUndefined (ErrorMessage)
+  { "retryAfterSeconds" :: Maybe (ErrorMessage)
+  , "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeServiceUnavailableException :: Newtype ServiceUnavailableException _
 derive instance repGenericServiceUnavailableException :: Generic ServiceUnavailableException _
@@ -865,12 +864,12 @@ instance encodeServiceUnavailableException :: Encode ServiceUnavailableException
 
 -- | Constructs ServiceUnavailableException from required parameters
 newServiceUnavailableException :: ServiceUnavailableException
-newServiceUnavailableException  = ServiceUnavailableException { "message": (NullOrUndefined Nothing), "retryAfterSeconds": (NullOrUndefined Nothing) }
+newServiceUnavailableException  = ServiceUnavailableException { "message": Nothing, "retryAfterSeconds": Nothing }
 
 -- | Constructs ServiceUnavailableException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newServiceUnavailableException' :: ( { "retryAfterSeconds" :: NullOrUndefined (ErrorMessage) , "message" :: NullOrUndefined (ErrorMessage) } -> {"retryAfterSeconds" :: NullOrUndefined (ErrorMessage) , "message" :: NullOrUndefined (ErrorMessage) } ) -> ServiceUnavailableException
-newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "message": (NullOrUndefined Nothing), "retryAfterSeconds": (NullOrUndefined Nothing) }
+newServiceUnavailableException' :: ( { "retryAfterSeconds" :: Maybe (ErrorMessage) , "message" :: Maybe (ErrorMessage) } -> {"retryAfterSeconds" :: Maybe (ErrorMessage) , "message" :: Maybe (ErrorMessage) } ) -> ServiceUnavailableException
+newServiceUnavailableException'  customize = (ServiceUnavailableException <<< customize) { "message": Nothing, "retryAfterSeconds": Nothing }
 
 
 
@@ -896,8 +895,8 @@ instance encodeSnapshotId :: Encode SnapshotId where encode = genericEncode opti
 
 -- | <p> Too many requests have been received for this AWS account in too short a time. The request should be retried after some time delay. </p>
 newtype TooManyRequestsException = TooManyRequestsException 
-  { "retryAfterSeconds" :: NullOrUndefined (ErrorMessage)
-  , "message" :: NullOrUndefined (ErrorMessage)
+  { "retryAfterSeconds" :: Maybe (ErrorMessage)
+  , "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeTooManyRequestsException :: Newtype TooManyRequestsException _
 derive instance repGenericTooManyRequestsException :: Generic TooManyRequestsException _
@@ -907,18 +906,18 @@ instance encodeTooManyRequestsException :: Encode TooManyRequestsException where
 
 -- | Constructs TooManyRequestsException from required parameters
 newTooManyRequestsException :: TooManyRequestsException
-newTooManyRequestsException  = TooManyRequestsException { "message": (NullOrUndefined Nothing), "retryAfterSeconds": (NullOrUndefined Nothing) }
+newTooManyRequestsException  = TooManyRequestsException { "message": Nothing, "retryAfterSeconds": Nothing }
 
 -- | Constructs TooManyRequestsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTooManyRequestsException' :: ( { "retryAfterSeconds" :: NullOrUndefined (ErrorMessage) , "message" :: NullOrUndefined (ErrorMessage) } -> {"retryAfterSeconds" :: NullOrUndefined (ErrorMessage) , "message" :: NullOrUndefined (ErrorMessage) } ) -> TooManyRequestsException
-newTooManyRequestsException'  customize = (TooManyRequestsException <<< customize) { "message": (NullOrUndefined Nothing), "retryAfterSeconds": (NullOrUndefined Nothing) }
+newTooManyRequestsException' :: ( { "retryAfterSeconds" :: Maybe (ErrorMessage) , "message" :: Maybe (ErrorMessage) } -> {"retryAfterSeconds" :: Maybe (ErrorMessage) , "message" :: Maybe (ErrorMessage) } ) -> TooManyRequestsException
+newTooManyRequestsException'  customize = (TooManyRequestsException <<< customize) { "message": Nothing, "retryAfterSeconds": Nothing }
 
 
 
 -- | <p> Credentials of the caller are insufficient to authorize the request. </p>
 newtype UnauthorizedException = UnauthorizedException 
-  { "message" :: NullOrUndefined (ErrorMessage)
+  { "message" :: Maybe (ErrorMessage)
   }
 derive instance newtypeUnauthorizedException :: Newtype UnauthorizedException _
 derive instance repGenericUnauthorizedException :: Generic UnauthorizedException _
@@ -928,18 +927,18 @@ instance encodeUnauthorizedException :: Encode UnauthorizedException where encod
 
 -- | Constructs UnauthorizedException from required parameters
 newUnauthorizedException :: UnauthorizedException
-newUnauthorizedException  = UnauthorizedException { "message": (NullOrUndefined Nothing) }
+newUnauthorizedException  = UnauthorizedException { "message": Nothing }
 
 -- | Constructs UnauthorizedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnauthorizedException' :: ( { "message" :: NullOrUndefined (ErrorMessage) } -> {"message" :: NullOrUndefined (ErrorMessage) } ) -> UnauthorizedException
-newUnauthorizedException'  customize = (UnauthorizedException <<< customize) { "message": (NullOrUndefined Nothing) }
+newUnauthorizedException' :: ( { "message" :: Maybe (ErrorMessage) } -> {"message" :: Maybe (ErrorMessage) } ) -> UnauthorizedException
+newUnauthorizedException'  customize = (UnauthorizedException <<< customize) { "message": Nothing }
 
 
 
 -- | <p> Request structure used for requests to update project configuration. </p>
 newtype UpdateProjectRequest = UpdateProjectRequest 
-  { "contents" :: NullOrUndefined (Contents)
+  { "contents" :: Maybe (Contents)
   , "projectId" :: (ProjectId)
   }
 derive instance newtypeUpdateProjectRequest :: Newtype UpdateProjectRequest _
@@ -950,18 +949,18 @@ instance encodeUpdateProjectRequest :: Encode UpdateProjectRequest where encode 
 
 -- | Constructs UpdateProjectRequest from required parameters
 newUpdateProjectRequest :: ProjectId -> UpdateProjectRequest
-newUpdateProjectRequest _projectId = UpdateProjectRequest { "projectId": _projectId, "contents": (NullOrUndefined Nothing) }
+newUpdateProjectRequest _projectId = UpdateProjectRequest { "projectId": _projectId, "contents": Nothing }
 
 -- | Constructs UpdateProjectRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateProjectRequest' :: ProjectId -> ( { "contents" :: NullOrUndefined (Contents) , "projectId" :: (ProjectId) } -> {"contents" :: NullOrUndefined (Contents) , "projectId" :: (ProjectId) } ) -> UpdateProjectRequest
-newUpdateProjectRequest' _projectId customize = (UpdateProjectRequest <<< customize) { "projectId": _projectId, "contents": (NullOrUndefined Nothing) }
+newUpdateProjectRequest' :: ProjectId -> ( { "contents" :: Maybe (Contents) , "projectId" :: (ProjectId) } -> {"contents" :: Maybe (Contents) , "projectId" :: (ProjectId) } ) -> UpdateProjectRequest
+newUpdateProjectRequest' _projectId customize = (UpdateProjectRequest <<< customize) { "projectId": _projectId, "contents": Nothing }
 
 
 
 -- | <p> Result structure used for requests to updated project configuration. </p>
 newtype UpdateProjectResult = UpdateProjectResult 
-  { "details" :: NullOrUndefined (ProjectDetails)
+  { "details" :: Maybe (ProjectDetails)
   }
 derive instance newtypeUpdateProjectResult :: Newtype UpdateProjectResult _
 derive instance repGenericUpdateProjectResult :: Generic UpdateProjectResult _
@@ -971,10 +970,10 @@ instance encodeUpdateProjectResult :: Encode UpdateProjectResult where encode = 
 
 -- | Constructs UpdateProjectResult from required parameters
 newUpdateProjectResult :: UpdateProjectResult
-newUpdateProjectResult  = UpdateProjectResult { "details": (NullOrUndefined Nothing) }
+newUpdateProjectResult  = UpdateProjectResult { "details": Nothing }
 
 -- | Constructs UpdateProjectResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateProjectResult' :: ( { "details" :: NullOrUndefined (ProjectDetails) } -> {"details" :: NullOrUndefined (ProjectDetails) } ) -> UpdateProjectResult
-newUpdateProjectResult'  customize = (UpdateProjectResult <<< customize) { "details": (NullOrUndefined Nothing) }
+newUpdateProjectResult' :: ( { "details" :: Maybe (ProjectDetails) } -> {"details" :: Maybe (ProjectDetails) } ) -> UpdateProjectResult
+newUpdateProjectResult'  customize = (UpdateProjectResult <<< customize) { "details": Nothing }
 
